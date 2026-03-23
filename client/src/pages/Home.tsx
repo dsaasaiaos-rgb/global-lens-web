@@ -1,25 +1,33 @@
-import { Button } from "@/components/ui/button";
-import { Loader2 } from "lucide-react";
-import { Streamdown } from 'streamdown';
-
 /**
- * All content in this page are only for example, replace with your own feature implementation
- * When building pages, remember your instructions in Frontend Best Practices, Design Guide and Common Pitfalls
+ * Global Lens Landing Page
+ * 
+ * Design: Diplomatic Dispatch
+ * - Editorial-premium aesthetic inspired by The Economist and Palantir
+ * - Deep navy-charcoal primary with warm amber-gold accents
+ * - Asymmetric, column-based layout
+ * - Playfair Display headlines + Inter body text
  */
-export default function Home() {
-  // If theme is switchable in App.tsx, we can implement theme toggling like this:
-  // const { theme, toggleTheme } = useTheme();
 
+import Navigation from '@/components/Navigation';
+import Hero from '@/components/Hero';
+import Features from '@/components/Features';
+import Comparison from '@/components/Comparison';
+import Pricing from '@/components/Pricing';
+import CTABanner from '@/components/CTABanner';
+import Footer from '@/components/Footer';
+
+export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col">
-      <main>
-        {/* Example: lucide-react for icons */}
-        <Loader2 className="animate-spin" />
-        Example Page
-        {/* Example: Streamdown for markdown rendering */}
-        <Streamdown>Any **markdown** content</Streamdown>
-        <Button variant="default">Example Button</Button>
+    <div className="min-h-screen flex flex-col bg-background">
+      <Navigation />
+      <main className="flex-1">
+        <Hero />
+        <Features />
+        <Comparison />
+        <Pricing />
+        <CTABanner />
       </main>
+      <Footer />
     </div>
   );
 }
